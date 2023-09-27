@@ -1,0 +1,176 @@
+/* _______________________________STYLES WITH JAVASCRIPT ENABLED_______________________________ */
+
+html {
+   background: rgb(246, 246, 240);
+}
+
+/* _________________________FONTS__________________________ */
+@font-face {
+    font-family: tiemposBlack;
+    src: url(fonts/TiemposHeadline-medium.otf);
+}
+@font-face {
+    font-family: tiemposLight;
+    src: url(fonts/TiemposHeadline-Light.otf);
+}
+@font-face {
+    font-family: openSans;
+    font-style: normal;
+    font-weight: 400;
+    src: url(fonts/open-sans-v36-latin-regular.woff2); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+h1 {
+    font-family: tiemposBlack;
+}
+p {
+    font-family: openSans;
+}
+sup {
+    font-size: 50%;
+}
+/* _________________________GRID__________________________ */
+.parentContainer {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 10vh 75vh 15vh;
+    }
+/* _________________________HEADER__________________________ */
+.headContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px; 
+}
+
+header { 
+    grid-area: 1 / 1 / 2 / 8; 
+}
+/* _________________________LOGO__________________________ */
+.logo{
+    margin-right: 30px;
+    font-size: 1.7vw;
+}
+
+/* _________________________SEARCH BAR__________________________ */
+.search-bar > button {
+    display: none;
+}
+.search-bar > input {
+    width: 20vw;
+    height: 2.5vh;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    font-family: openSans;
+    background: rgb(236, 236, 236);
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(246, 246, 240) 100%);
+}
+input[type="text"]::placeholder {
+    color: rgb(226, 223, 223);
+    padding-left: 15px;
+}
+
+/* _________________________NAVIGATION__________________________ */
+nav ul {
+    list-style: none;
+    padding-left: 120px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+}
+nav li {
+    margin-right: 50px;
+}
+nav a {
+    font-family: openSans;
+    font-size: 1.2vw;
+    padding: 10px;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 20px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+/* Add the glowing effect on hover */
+nav a:hover {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    color: rgb(246, 246, 240);
+    background-color: rgb(175, 194, 174);
+}
+
+/* _________________________MAIN SECTION__________________________ */
+main { 
+    grid-area: 2 / 1 / 7 / 5; 
+    background-color: rgba(0, 0, 255, 0%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding-left: 20%;
+}
+.mainButton {
+    width: 7vw;
+    height: 2vh;
+    text-decoration: none;
+    font-family: openSans;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 1vw;
+    border-radius: 25px;
+    padding: 15px;
+    background: black;
+    color: white;
+
+}
+.mainButton:hover {
+    width: 7.2vw;
+    height: 2vh;
+    text-decoration: none;
+    font-family: openSans;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 1vw;
+    border-radius: 25px;
+    padding: 15px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(175, 194, 174);
+}
+
+.mainSection > h1 {
+    font-family: tiemposLight;
+    font-size: 2vw;
+    margin-bottom: -10px;
+}
+.mainSection > p {
+    font-size: 1vw;
+    margin-bottom: 10px;
+}
+
+/* _________________________SECONDARY SECTION__________________________ */
+.secondarySection { 
+    grid-area: 2 / 5 / 7 / 8; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: flex-start;
+
+}
+.secondarySection > img {
+    width: 40vw;
+}
+/* _________________________FOOTER__________________________ */
+footer { 
+    grid-area: 7 / 1 / 8 / 8; 
+    text-align: center;
+    font-size: .9vw;
+}
+
+/* __________________Media Queries_________________ */
