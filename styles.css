@@ -1,99 +1,186 @@
+/* _______________________________STYLES WITH JAVASCRIPT ENABLED_______________________________ */
+
 html {
-   background: rgb(246, 246, 240);
-}
+    background: rgb(246, 246, 240);
+ }
+ /* _________________________FONTS__________________________ */
+ @font-face {
+     font-family: tiemposBlack;
+     src: url(fonts/TiemposHeadline-medium.otf);
+ }
+ @font-face {
+     font-family: tiemposLight;
+     src: url(fonts/TiemposHeadline-Light.otf);
+ }
+ @font-face {
+     font-family: openSans;
+     font-style: normal;
+     font-weight: 400;
+     src: url(fonts/open-sans-v36-latin-regular.woff2); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+   }
+ h1 {
+     font-family: tiemposBlack;
+ }
+ p {
+     font-family: openSans;
+ }
+ sup {
+     font-size: 50%;
+ }
+ /* _________________________GRID__________________________ */
+ .parentContainer {
+     display: grid;
+     width: 100%;
+     grid-template-columns: repeat(7, 1fr);
+     grid-template-rows: 15vh repeat(2, 60vh) 10vh;
+ }
+ /* _________________________HEADER__________________________ */
+ .headContainer{
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: flex-start;
+         padding: 10px; 
+ }
+ 
+ header { 
+     grid-area: 1 / 1 / 2 / 8; 
+ }
+ /* _________________________LOGO__________________________ */
+ .logo{
+     margin-right: 30px;
+     margin-top: 0;
+     font-size: 1.7vw;
+ }
+ 
+ /* _________________________SEARCH BAR__________________________ */
+ .search-bar > button {
+     display: none;
+ }
+ .search-bar > input {
+     width: 20vw;
+     height: 2.5vh;
+     border-radius: 5px;
+     border: none;
+     font-size: 15px;
+     font-family: openSans;
+     background: rgb(236, 236, 236);
+     background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(246, 246, 240) 100%);
+ }
+ input[type="text"]::placeholder {
+     color: rgb(226, 223, 223);
+     padding-left: 15px;
+ }
+ 
+ /* _________________________NAVIGATION__________________________ */
+ nav ul {
+     list-style: none;
+     padding-left: 10vw;
+     margin: 0;
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     align-content: center;
+ }
+ nav li {
+     margin-right: 1.2vw;
+ }
+ nav a {
+     font-family: openSans;
+     font-size: 1.2vw;
+     padding: 10px;
+     text-decoration: none;
+     color: #000000;
+     border-radius: 20px;
+     background-color: transparent;
+     transition: background-color 0.3s ease;
+ }
+ 
+ nav a:hover {
+     padding-top: 10px;
+     padding-bottom: 10px;
+     border-radius: 20px;
+     color: rgb(246, 246, 240);
+     background-color: rgb(175, 194, 174);
+ }
+ 
+ /* _________________________MAIN SECTION__________________________ */
+ main { 
+     grid-area: 2 / 1 / 3 / 5; 
+     background-color: rgba(0, 0, 255, 0%);
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-content: center;
+     padding-left: 20%;
+ }
+ .mainButton {
+     width: 7vw;
+     height: 2vh;
+     text-decoration: none;
+     font-family: openSans;
+     display: flex;
+     justify-content: center;
+     align-items: center; 
+     font-size: 1vw;
+     border-radius: 25px;
+     padding: 15px;
+     background: black;
+     color: white;
+ 
+ }
+ .mainButton:hover {
+     width: 7.2vw;
+     height: 2vh;
+     text-decoration: none;
+     font-family: openSans;
+     display: flex;
+     justify-content: center;
+     align-items: center; 
+     font-size: 1vw;
+     border-radius: 25px;
+     padding: 15px;
+     color: rgb(0, 0, 0);
+     background-color: rgb(175, 194, 174);
+ }
+ 
+ .mainSection > h1 {
+     font-family: tiemposLight;
+     font-size: 2vw;
+     margin-bottom: -10px;
+ }
+ .mainSection > p {
+     font-size: 1vw;
+     margin-bottom: 10px;
+ }
+ 
+ /* _________________________SECONDARY SECTION__________________________ */
+ .secondarySection { 
+     grid-area: 2 / 5 / 3 / 8; 
+     display: flex;
+     flex-direction: column;
+     justify-content: center ;
+     align-items: flex-start;
+ 
+ }
+ .secondarySection > img {
+     width: 40vw;
+ }
 
-/* _________________________FONTS__________________________ */
-@font-face {
-    font-family: tiemposBlack;
-    src: url(fonts/TiemposHeadline-medium.otf);
-}
-@font-face {
-    font-family: tiemposLight;
-    src: url(fonts/TiemposHeadline-Light.otf);
-}
-@font-face {
-    font-family: openSans;
-    font-style: normal;
-    font-weight: 400;
-    src: url(fonts/open-sans-v36-latin-regular.woff2); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-h1 {
-    font-family: tiemposBlack;
-}
-p {
-    font-family: openSans;
-}
-sup {
-    font-size: 50%;
-}
-/* _________________________GRID__________________________ */
-.parentContainer {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 10vh 75vh 15vh;
-    /* grid-column-gap: 2px; */
-    /* grid-row-gap: 2px; */
-    }
-/* _________________________HEADER__________________________ */
-.headContainer{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 10px; 
-}
-
-header { 
-    grid-area: 1 / 1 / 2 / 8; 
-}
-/* _________________________LOGO__________________________ */
-.logo{
-    margin-right: 30px;
-    font-size: 1.7vw;
-}
-
-/* _________________________SEARCH BAR__________________________ */
-.search-bar > button {
-    display: none;
-}
-.search-bar > input {
-    width: 20vw;
-    height: 2.5vh;
-    border-radius: 5px;
-    border: none;
-    font-size: 20px;
-    font-family: openSans;
-    background: rgb(236, 236, 236);
-    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(246, 246, 240) 100%);
-}
-input[type="text"]::placeholder {
-    color: rgb(226, 223, 223);
-    padding-left: 15px;
-}
-
-/* _________________________NAVIGATION__________________________ */
-nav ul {
-    list-style: none;
-    padding-left: 120px;
-    margin: 0;
+ /* _________________________THIRD SECTION__________________________ */
+.thirdSection { 
+    grid-area: 3 / 1 / 4 / 4; 
     display: flex;
-    justify-content: flex-start;
-    align-content: center;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: flex-end;
 }
-nav li {
-    margin-right: 50px;
+.thirdSection > img {
+    width: 40vw;
 }
-nav a {
-    font-family: openSans;
-    font-size: 1.2vw;
-    text-decoration: none;
-    color: #000000;
-}
-
-/* _________________________MAIN SECTION__________________________ */
-main { 
-    grid-area: 2 / 1 / 7 / 5; 
+ /* _________________________FOURTH SECTION__________________________ */
+ .fourthSection { 
+    grid-area: 3 / 4 / 4 / 8; 
     background-color: rgba(0, 0, 255, 0%);
     display: flex;
     flex-direction: column;
@@ -101,49 +188,419 @@ main {
     align-content: center;
     padding-left: 20%;
 }
-.mainButton {
-    /* width: 18%; */
-    width: 7vw;
-    height: 2vh;
-    text-decoration: none;
-    font-family: openSans;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    font-size: 1vw;
-    border-radius: 25px;
-    padding: 15px;
-    background: black;
-    color: white;
 
-}
-.mainSection > h1 {
+.fourthSection > h1 {
     font-family: tiemposLight;
     font-size: 2vw;
     margin-bottom: -10px;
 }
-.mainSection > p {
+.fourthSection > p {
     font-size: 1vw;
     margin-bottom: 10px;
 }
-
-/* _________________________SECONDARY SECTION__________________________ */
-.secondarySection { 
-    grid-area: 2 / 5 / 7 / 8; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center ;
-    align-items: flex-start;
-
-}
-.secondarySection > img {
-    width: 40vw;
-}
-/* _________________________FOOTER__________________________ */
-footer { 
-    grid-area: 7 / 1 / 8 / 8; 
-    text-align: center;
-    font-size: .9vw;
-}
-
+ /* _________________________FOOTER__________________________ */
+ footer { 
+     grid-area: 4 / 1 / 5 / 8; 
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-end;
+     align-items: center;
+     font-size: .9vw;
+ }
 /* __________________Media Queries_________________ */
+
+ /* ____________________________Medium Screens__________________________ */
+
+@media (max-width: 768px){
+    /* _________________________GRID__________________________ */
+        .parentContainer {
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: 15vh repeat(2, 50vh) 10vh;
+        }
+    /* LOGO */
+        .logo{
+            margin-right: 20px;
+            font-size: 1.7vw;
+        }
+    
+    /* SEARCH BAR */
+        .search-bar > button {
+            display: none;
+        }
+        .search-bar > input {
+            width: 20vw;
+            height: 2.5vh;
+            border-radius: 5px;
+            border: none;
+            font-size: 20px;
+            font-family: openSans;
+            background: rgb(236, 236, 236);
+            background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(246, 246, 240) 100%);
+        }
+        input[type="text"]::placeholder {
+            color: rgb(226, 223, 223);
+            padding-left: 15px;
+            font-size: 10px;
+        }
+    
+    /* NAVIGATION */
+        nav ul {
+            list-style: none;
+            padding-left: 8vw;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-content: center;
+        }
+        nav li {
+            margin-right: 1.2vw;
+        }
+        nav a {
+            font-family: openSans;
+            font-size: 1.2vw;
+            padding: 5px;
+            text-decoration: none;
+            color: #000000;
+            border-radius: 20px;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 20px;
+            color: rgb(246, 246, 240);
+            background-color: rgb(175, 194, 174);
+        }
+    
+    /* _________________________MAIN SECTION__________________________ */
+        main { 
+            grid-area: 2 / 1 / 3 / 5;
+            background-color: rgba(0, 0, 255, 0%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            padding-left: 20%;
+        }
+        .mainButton {
+            width: 9vw;
+            height: 2vh;
+            text-decoration: none;
+            font-family: openSans;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            font-size: 1.6vw;
+            border-radius: 25px;
+            padding: 10px;
+            background: black;
+            color: white;
+    
+        }
+        .mainButton:hover {
+            width: 7.2vw;
+            height: 2vh;
+            text-decoration: none;
+            font-family: openSans;
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            font-size: 2vw;
+            border-radius: 25px;
+            padding: 15px;
+            color: rgb(0, 0, 0);
+            background-color: rgb(175, 194, 174);
+        }   
+        .mainSection > h1 {
+            font-family: tiemposLight;
+            font-size: 3vw;
+            margin-bottom: -5px;
+        }
+        .mainSection > p {
+            font-size: 2vw;
+            margin-bottom: 10px;
+        }
+    
+        /* _________________________SECONDARY SECTION__________________________ */
+        .secondarySection { 
+            grid-area: 2 / 5 / 3 / 8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center ;
+            align-items: flex-start;
+    
+        }
+        .secondarySection > img {
+            width: 40vw;
+        }
+/* _________________________THIRD SECTION__________________________ */
+        .thirdSection { 
+            grid-area: 3 / 1 / 4 / 4; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center ;
+            align-items: flex-end;
+            padding-left: 20%;
+        }
+        .thirdSection > img {
+            padding-left: 20%;
+            width: 40vw;
+        }
+ /* _________________________FOURTH SECTION__________________________ */
+        .fourthSection { 
+            grid-area: 3 / 4 / 4 / 8; 
+            background-color: rgba(0, 0, 255, 0%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            padding-left: 1%;
+        }
+
+        .fourthSection > h1 {
+            font-family: tiemposLight;
+            font-size: 3vw;
+            margin-bottom: -5px;
+        }
+        .fourthSection > p {
+            font-size: 2vw;
+            margin-bottom: 10px;
+        }
+ /* _________________________FOOTER__________________________ */
+        footer { 
+            grid-area: 4 / 1 / 5 / 8; 
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 1vw;
+        }
+    }
+
+/* ____________________________Small Screens__________________________ */
+@media(max-width:560px){
+    /* _________________________GRID__________________________ */
+    .parentContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20vh 15vh 50vh 15vh 50vh 15vh;
+    }
+    /* _________________________HEADER__________________________ */
+    .headContainer{
+        grid-area: 1 / 1 / 2 / 2;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5vh 5vh 5vh;
+    }
+    /* _________________________LOGO__________________________ */
+    h1.logo {
+        font-size: 22px;
+    }
+    header > h1 {
+        grid-area: 1 / 1 / 2 / 2; 
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    /* _________________________SEARCH BAR__________________________ */
+    .search-bar {  
+        
+        grid-area: 3 / 1 / 4 / 2;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .search-bar > button {
+        display: none;
+    }
+    .search-bar > input {
+        width: 50vw;
+        height: 1.5vh;
+        border-radius: 5px;
+        border: none;
+        font-size: 10px;
+        font-family: openSans;
+        background: rgb(236, 236, 236);
+        background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(246, 246, 240) 100%);
+    }
+    input[type="text"]::placeholder {
+        color: rgb(226, 223, 223);
+        padding-left: 15px;
+    }
+    
+    /* _________________________NAVIGATION__________________________ */
+    nav {
+        grid-area: 2 / 1 / 3 / 2;   
+    }
+    nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 0;  
+    }
+    nav li {
+        margin: 1vw;
+    }
+    nav a {
+        font-family: openSans;
+        font-size: 2.5vw;
+        padding: 5px;
+    
+        text-decoration: none;
+        color: #000000;
+        border-radius: 20px;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+    }
+    nav a:hover {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 20px;
+        color: rgb(246, 246, 240);
+        background-color: rgb(175, 194, 174);
+    }
+    
+    /* _________________________MAIN SECTION__________________________ */
+    main { 
+        grid-area: 3 / 1 / 5 / 2; 
+        background-color: rgba(0, 0, 255, 0%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: center;
+        padding: 10%;
+    }
+    .mainButton {
+        width: 15vw;
+        height: .9vh;
+        text-decoration: none;
+        font-family: openSans;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        font-size: 2.5vw;
+        border-radius: 25px;
+        padding: 15px;
+        background: black;
+        color: white;
+    
+    }
+    .mainButton:hover {
+        width: 15.2vw;
+        height: 1vh;
+        text-decoration: none;
+        font-family: openSans;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        font-size: 2.7vw;
+        border-radius: 25px;
+        padding: 15px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(175, 194, 174);
+    }
+    
+    .mainSection > h1 {
+        font-family: tiemposLight;
+        font-size: 5vw;
+        margin-bottom: 10px;
+    }
+    .mainSection > p {
+        font-size: 3vw;
+        margin-bottom: 10px;
+    }
+    
+/* _________________________SECONDARY SECTION__________________________ */
+    .secondarySection { 
+        grid-area: 2 / 1 / 3 / 2; 
+        display: flex;
+        flex-direction: row;
+        justify-content: center ;
+        align-items: center;
+    
+    }
+    .secondarySection > img {
+        padding-top: .5vh;
+        width: 40vw;
+    }
+/* _________________________THIRD SECTION__________________________ */
+    .thirdSection { 
+        grid-area: 4 / 1 / 5 / 2; 
+        display: flex;
+        flex-direction: row;
+        justify-content: center ;
+        align-items: center;
+        padding: 0;
+        
+    }
+    .thirdSection > img {
+        padding-left: 0%;
+        padding-top: 6vh;
+        width: 40vw;
+    }
+/* _________________________FOURTH SECTION__________________________ */
+    .fourthSection { 
+        grid-area: 5 / 1 / 6 / 2; 
+        background-color: rgba(0, 0, 255, 0%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;    
+        align-content: center;
+        padding: 10%;            
+    }
+    .mainButton {
+        width: 15vw;
+        height: .9vh;
+        text-decoration: none;
+        font-family: openSans;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        font-size: 2.5vw;
+        border-radius: 25px;
+        padding: 15px;
+        background: black;
+        color: white;    
+    }
+    .mainButton:hover {
+        width: 15.2vw;
+        height: 1vh;
+        text-decoration: none;
+        font-family: openSans;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        font-size: 2.7vw;
+        border-radius: 25px;
+        padding: 15px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(175, 194, 174);    
+    }
+        
+    .fourthSection > h1 {
+        font-family: tiemposLight;
+        font-size: 5vw;
+        margin-bottom: 10px;
+    }
+    .fourthSection > p {
+        font-size: 3vw;
+        margin-bottom: 10px;
+    }        
+ 
+    /* _________________________FOOTER__________________________ */
+    footer { 
+        grid-area: 6 / 1 / 7 / 2;
+        text-align: center;
+        font-size: 2.2vw;
+    }
+}
