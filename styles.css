@@ -228,10 +228,15 @@ html {
             grid-template-columns: repeat(7, 1fr);
             grid-template-rows: 15vh repeat(2, 50vh) 10vh;
         }
+        .headContainer { 
+         display: flex;
+         flex-direction: row;
+         justify-content: space-around;
+        }
     /* LOGO */
         .logo{
             margin-right: 20px;
-            font-size: 1.7vw;
+            font-size: 2vw;
         }
     
     /* SEARCH BAR */
@@ -255,41 +260,100 @@ html {
         }
     
     /* NAVIGATION */
-        nav ul {
-            list-style: none;
-            padding-left: 8vw;
-            margin: 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-content: center;
-        }
-        nav li {
-            margin-right: 1.2vw;
-        }
-        nav a {
-            font-family: openSans;
-            font-size: 1.2vw;
-            padding: 5px;
-            text-decoration: none;
-            color: #000000;
-            border-radius: 20px;
-            background-color: transparent;
-            transition: background-color 0.3s ease;
-        }
-        nav a:hover {
-            padding-top: 10px;
-            padding-bottom: 10px;
-            border-radius: 20px;
-            color: rgb(246, 246, 240);
-            background-color: rgb(175, 194, 174);
-        }
-        .mobile-menu-button {
-            display: none;
-        }
-        .mobile-nav {
-            display: none;
-        }
+    /* Hide desktop navigation */
+    nav {
+        display: none;
+    }
+    .mobile-menu-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        grid-area: 1 / 1 / 2 / 2;
+        margin-right: 10%;
+    }
+    /* Show mobile navigation */
+    .mobile-nav {
+        border-radius: 5px;
+        padding: 10px;
+        background-color: rgb(246, 246, 240);;
+        position: absolute;
+        margin-top: 4%;
+        /* margin: 10%; */
+        width: 90vw;
+        height: 100vh; 
+    }
+    #contactBtn {
+        height: 7vh;
+        width: 50vw;
+        font-size: 20px;
+        background-color: rgb(175, 194, 174);
+        margin-top: 70%;
+    }
+    .contact-button {
+        display: none;
+        position: fixed;
+        bottom: -50px; /* Adjust this value as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: bottom 0.5s ease; /* Adjust the transition duration as needed */
+    }
+    .mobile-nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        margin: 10%;
+        padding-top: 20%;
+        padding-left: 0;
+    }
+
+    .mobile-nav li {
+        margin-bottom: 20px;
+    }
+
+    .mobile-nav a {
+        text-decoration: none;
+        color: #000000;
+        font-size: 30px;
+        
+    }
+    #mobileMenuBtn {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .bar1, .bar2, .bar3 {
+        width: 20px;
+        height: 2px;
+        background-color: black;
+        margin: 2px 0;
+        transition: 0.4s;
+    }
+    /* Rotate first bar */
+    .change .bar1 {
+        transform: translate(0, 6px) rotate(-45deg);
+    }
+    
+    /* Fade out the second bar */
+    .change .bar2 {opacity: 0;}
+    
+    /* Rotate last bar */
+    .change .bar3 {
+        transform: translate(0, -6px) rotate(45deg);
+    }
+    .mobile-nav a:hover {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-radius: 10px;
+        color: rgb(246, 246, 240);
+        background-color: rgb(175, 194, 174);
+    }
     /* _________________________MAIN SECTION__________________________ */
         main { 
             grid-area: 2 / 1 / 3 / 5;
