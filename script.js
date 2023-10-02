@@ -46,13 +46,38 @@ function toggleMobileNav() {
 mobileMenuBtn.addEventListener("click", toggleMobileNav);
 
 // Keep mobile navigation open when the mouse is inside
-mobileNav.addEventListener("mouseenter", () => {
-    mobileNav.style.display = "block";
-    isMobileNavOpen = true;
-});
+// mobileNav.addEventListener("mouseenter", () => {
+//     mobileNav.style.display = "block";
+//     isMobileNavOpen = true;
+// });
 
 // Hide mobile navigation when the mouse leaves the menu
-mobileNav.addEventListener("mouseleave", () => {
-    mobileNav.style.display = "none";
-    isMobileNavOpen = false;
+// mobileNav.addEventListener("mouseleave", () => {
+//     mobileNav.style.display = "none";
+//     isMobileNavOpen = false;
+// });
+
+// Transforms Menu Burger to X and vice versa
+mobileMenuBtn.addEventListener("click", () => {
+    mobileMenuBtn.classList.toggle("change");
+  });
+
+//Contact Button smooth transition in mobile nav
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactButton = document.querySelector(".contact-button");
+
+    mobileMenuBtn.addEventListener("click", function () {
+        // Toggle the contact button's visibility
+        if (contactButton.style.display === "none" || contactButton.style.display === "") {
+            contactButton.style.display = "block";
+            setTimeout(function () {
+                contactButton.style.bottom = "20px";
+            }, 100); // delay
+        } else {
+            contactButton.style.bottom = "-50px"; // Hide the button
+            setTimeout(function () {
+                contactButton.style.display = "none";
+            }, 500); // Match the transition duration
+        }
+    });
 });
