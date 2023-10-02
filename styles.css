@@ -45,6 +45,10 @@ html {
  
  header { 
      grid-area: 1 / 1 / 2 / 8; 
+     position: fixed;
+     width: 100%;
+     top: 0;
+     background: rgb(246, 246, 240);
  }
  /* _________________________LOGO__________________________ */
  .logo{
