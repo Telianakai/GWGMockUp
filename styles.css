@@ -463,42 +463,79 @@ html {
     /* Show mobile navigation */
     .mobile-nav {
         border-radius: 5px;
-        border-top-right-radius: 0;
         padding: 10px;
-        background-color: rgba(175, 194, 174, 50%);
+        background-color: rgb(246, 246, 240);;
         position: absolute;
-        margin-top: 5%;
-        margin-left: 60%;
-        /* nav-left: 0; */  
+        margin-top: 10%;
+        /* margin: 10%; */
+        width: 90vw;
+        height: 100vh; 
     }
-
+    #contactBtn {
+        height: 7vh;
+        width: 50vw;
+        font-size: 20px;
+        background-color: rgb(175, 194, 174);
+        margin-top: 70%;
+    }
+    .contact-button {
+        display: none;
+        position: fixed;
+        bottom: -50px; /* Adjust this value as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: bottom 0.5s ease; /* Adjust the transition duration as needed */
+    }
     .mobile-nav ul {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         list-style: none;
-        padding: 0;
+        margin: 10%;
+        padding-top: 20%;
+        padding-left: 0;
     }
 
     .mobile-nav li {
-        margin-bottom: 5px;
+        margin-bottom: 20px;
     }
 
     .mobile-nav a {
         text-decoration: none;
         color: #000000;
-        font-size: 14px;
+        font-size: 30px;
+        
     }
     #mobileMenuBtn {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-content: flex-end;
+        /* justify-content: center; */
+        /* align-content: flex-end; */
     }
-    .bar {
+    .bar1, .bar2, .bar3 {
         width: 20px;
         height: 2px;
         background-color: black;
         margin: 2px 0;
+        transition: 0.4s;
+    }
+    /* Rotate first bar */
+    .change .bar1 {
+        transform: translate(0, 6px) rotate(-45deg);
+    }
+    
+    /* Fade out the second bar */
+    .change .bar2 {opacity: 0;}
+    
+    /* Rotate last bar */
+    .change .bar3 {
+        transform: translate(0, -6px) rotate(45deg);
     }
     .mobile-nav a:hover {
         padding-top: 2px;
