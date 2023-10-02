@@ -107,7 +107,12 @@ html {
      color: rgb(246, 246, 240);
      background-color: rgb(175, 194, 174);
  }
- 
+ #mobileNav {
+    display: none;
+}
+.mobile-menu-button {
+    display: none;
+}
  /* _________________________MAIN SECTION__________________________ */
  main { 
      grid-area: 2 / 1 / 3 / 5; 
@@ -279,7 +284,12 @@ html {
             color: rgb(246, 246, 240);
             background-color: rgb(175, 194, 174);
         }
-    
+        .mobile-menu-button {
+            display: none;
+        }
+        .mobile-nav {
+            display: none;
+        }
     /* _________________________MAIN SECTION__________________________ */
         main { 
             grid-area: 2 / 1 / 3 / 5;
@@ -383,7 +393,7 @@ html {
             align-items: center;
             font-size: 1vw;
         }
-    }
+}   
 
 /* ____________________________Small Screens__________________________ */
 @media(max-width:560px){
@@ -398,7 +408,7 @@ html {
         grid-area: 1 / 1 / 2 / 2;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 5vh 5vh 5vh;
+        grid-template-rows: 5vh 5vh;
     }
     /* _________________________LOGO__________________________ */
     h1.logo {
@@ -408,13 +418,13 @@ html {
         grid-area: 1 / 1 / 2 / 2; 
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
     }
     /* _________________________SEARCH BAR__________________________ */
     .search-bar {  
         
-        grid-area: 3 / 1 / 4 / 2;
+        grid-area: 2 / 1 / 3 / 2;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -439,41 +449,64 @@ html {
     }
     
     /* _________________________NAVIGATION__________________________ */
+    /* Hide desktop navigation */
     nav {
-        grid-area: 2 / 1 / 3 / 2;   
+        display: none;
     }
-    nav ul {
-        list-style: none;
+    .mobile-menu-button {
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        align-content: center;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        padding: 0;  
+        justify-content: flex-end;
+        grid-area: 1 / 1 / 2 / 2;
+        margin-right: 10%;
     }
-    nav li {
-        margin: 1vw;
+    /* Show mobile navigation */
+    .mobile-nav {
+        border-radius: 5px;
+        border-top-right-radius: 0;
+        padding: 10px;
+        background-color: rgba(175, 194, 174, 50%);
+        position: absolute;
+        margin-top: 5%;
+        margin-left: 60%;
+        /* nav-left: 0; */  
     }
-    nav a {
-        font-family: openSans;
-        font-size: 2.5vw;
-        padding: 5px;
-    
+
+    .mobile-nav ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0;
+    }
+
+    .mobile-nav li {
+        margin-bottom: 5px;
+    }
+
+    .mobile-nav a {
         text-decoration: none;
         color: #000000;
-        border-radius: 20px;
-        background-color: transparent;
-        transition: background-color 0.3s ease;
+        font-size: 14px;
     }
-    nav a:hover {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        border-radius: 20px;
+    #mobileMenuBtn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: flex-end;
+    }
+    .bar {
+        width: 20px;
+        height: 2px;
+        background-color: black;
+        margin: 2px 0;
+    }
+    .mobile-nav a:hover {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-radius: 10px;
         color: rgb(246, 246, 240);
         background-color: rgb(175, 194, 174);
     }
-    
     /* _________________________MAIN SECTION__________________________ */
     main { 
         grid-area: 3 / 1 / 5 / 2; 
@@ -499,7 +532,7 @@ html {
         color: white;
     
     }
-    .mainButton:hover {
+    .mainButton :hover {
         width: 15.2vw;
         height: 1vh;
         text-decoration: none;
